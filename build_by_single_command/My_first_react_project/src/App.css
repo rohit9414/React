@@ -1,0 +1,258 @@
+#root {
+  min-height: 100vh;
+}
+
+.notes-app {
+  width: min(100% - 40px, 720px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #59634f;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #263323;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #687064;
+}
+
+.note-form {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #e2e5db;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgb(38 51 35 / 6%);
+}
+
+.note-form label {
+  color: #263323;
+  font-weight: 700;
+}
+
+.note-form textarea,
+.note-form input,
+.note-form select,
+.note-filters input,
+.note-filters select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9ded2;
+  border-radius: 10px;
+  padding: 12px;
+  color: #263323;
+  background: #fcfcfa;
+  font: inherit;
+}
+
+.note-form textarea {
+  resize: vertical;
+}
+
+.note-form textarea:focus,
+.note-form input:focus,
+.note-form select:focus,
+.note-filters input:focus,
+.note-filters select:focus {
+  border-color: #657b52;
+  outline: 3px solid rgb(101 123 82 / 18%);
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.form-footer span {
+  color: #73796d;
+  font-size: 0.85rem;
+}
+
+.form-footer button,
+.delete-button {
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-footer button {
+  padding: 10px 16px;
+  color: #fff;
+  background: #465d3c;
+}
+
+.form-footer button:hover:not(:disabled) {
+  background: #35492d;
+}
+
+.form-footer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.notes-section {
+  margin-top: 40px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #263323;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.6rem;
+}
+
+.section-heading span {
+  display: grid;
+  min-width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: #465d3c;
+  background: #e9eee3;
+  font-size: 0.85rem;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 24px;
+  border: 1px dashed #cbd2c2;
+  border-radius: 12px;
+  color: #687064;
+  text-align: center;
+}
+
+.note-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note-card {
+  display: flex;
+  min-height: 120px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid #e2e5db;
+  border-radius: 14px;
+  background: #fffef8;
+}
+
+.note-card p {
+  margin: 0;
+  color: #343b30;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.note-card h3 {
+  width: 100%;
+  margin: 0;
+  color: #263323;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  overflow-wrap: anywhere;
+}
+
+.note-type {
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: #465d3c;
+  background: #e9eee3;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.delete-button {
+  padding: 6px 10px;
+  color: #76514a;
+  background: #f5eae6;
+  font-size: 0.85rem;
+}
+
+.delete-button:hover {
+  background: #ecd9d3;
+}
+
+.storage-error {
+  margin: 16px 0 0;
+  color: #a22f25;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .notes-app {
+    width: min(100% - 28px, 720px);
+    padding: 40px 0;
+  }
+
+  .note-form {
+    padding: 16px;
+  }
+
+  .form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .note-filters {
+    grid-template-columns: 1fr;
+  }
+}
